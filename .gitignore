@@ -13,3 +13,4 @@ test-results
 next-env.d.ts
 .claude
 apps/web/public/ffmpeg
+.vercel

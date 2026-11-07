@@ -1,6 +1,6 @@
 # 0001: Tool 01 is a local Media Converter, not a downloader
 
-**Status:** accepted
+**Status:** superseded by [0005](0005-youtube-downloads.md)
 
 The spec's Video & Audio Downloader would need to fetch media from third-party platforms. That conflicts with the spec's own rule not to bypass platform restrictions or extract protected streams, and with platform terms.
 

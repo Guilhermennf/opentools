@@ -1,34 +1,39 @@
 {
   "name": "Conversor de Mídia",
-  "tagline": "Converta seus próprios arquivos de áudio e vídeo para MP4 ou MP3.",
-  "description": "Converta arquivos de mídia que você possui ou tem autorização para usar para MP4 ou MP3, localmente no navegador. Sem streams protegidos, sem uploads.",
+  "tagline": "Converta arquivos de áudio e vídeo, ou vídeos do YouTube, para MP4 ou MP3.",
+  "description": "Converta arquivos de mídia para MP4 ou MP3 no navegador, ou baixe um vídeo do YouTube em MP4 ou MP3. Use apenas conteúdo que você possui ou tem autorização para usar.",
   "seo": {
-    "title": "Conversor de Vídeo para MP4 e Áudio para MP3 Online",
-    "description": "Conversor de mídia online e gratuito. Converta seus próprios arquivos de vídeo e áudio para MP4 ou MP3 localmente no navegador, sem enviá-los."
+    "title": "YouTube para MP3 e MP4, Conversor de Vídeo e Áudio Online",
+    "description": "Conversor de mídia online e gratuito. Converta seus arquivos de vídeo e áudio para MP4 ou MP3 no navegador, ou baixe vídeos do YouTube em MP3 ou MP4."
   },
   "content": {
     "formats": [
-      "Vídeo: MP4",
-      "Áudio: MP3"
+      "Vídeo: MP4 (H.264 + AAC)",
+      "Áudio: MP3 (128 a 320 kbps)",
+      "YouTube: MP4 até 1080p, ou MP3"
     ],
-    "technical": "A conversão roda no navegador com FFmpeg compilado para WebAssembly. Funciona apenas com arquivos que você fornece ou links diretos para arquivos publicamente acessíveis, e não contorna restrições de plataformas.",
-    "privacy": "Os arquivos são processados localmente e nunca são armazenados pelo OpenTools. Nada é enviado, a menos que um recurso diga explicitamente o contrário.",
+    "technical": "A conversão roda no navegador com FFmpeg compilado para WebAssembly. Para links do YouTube, o servidor do OpenTools usa o yt-dlp para repassar os streams originais de vídeo e áudio; depois o seu navegador converte o áudio para MP3 ou junta vídeo e áudio em um MP4 sem recodificar.",
+    "privacy": "Seus próprios arquivos são processados localmente e nunca enviados. Vídeos do YouTube passam pelo servidor do OpenTools só durante o download e nunca são armazenados.",
     "instructions": [
-      "Escolha um arquivo ou cole um link direto para um arquivo de mídia.",
-      "Selecione MP3 (áudio) ou MP4 (vídeo) e a qualidade.",
-      "Clique em Converter, aguarde terminar e baixe o resultado."
+      "Escolha um arquivo, cole um link direto para um arquivo de mídia, ou cole um link do YouTube e clique em Buscar vídeo.",
+      "Selecione MP3 (áudio) ou MP4 (vídeo) e a qualidade ou resolução.",
+      "Inicie a conversão, aguarde terminar e baixe o resultado."
     ],
     "faq": [
       {
         "question": "Meu arquivo é enviado para um servidor?",
-        "answer": "Não. A conversão roda no seu navegador com FFmpeg compilado para WebAssembly. Só o motor de conversão (cerca de 32 MB) é baixado, uma vez, de uma CDN pública."
+        "answer": "Não. Arquivos que você escolhe são convertidos no seu navegador com FFmpeg compilado para WebAssembly. Só o motor de conversão (cerca de 32 MB) é baixado, uma vez, de uma CDN pública."
       },
       {
-        "question": "Posso baixar vídeos do YouTube ou de outras plataformas?",
-        "answer": "Não. Esta ferramenta só converte arquivos que você fornece ou links diretos para arquivos de mídia publicamente acessíveis. Ela não contorna restrições de plataformas nem extrai streams protegidos."
+        "question": "Posso baixar vídeos do YouTube?",
+        "answer": "Sim. Escolha a origem YouTube, cole um link e selecione MP3 ou MP4. O vídeo precisa ser público; vídeos privados, exclusivos para membros, com restrição de idade e transmissões ao vivo não são suportados. Baixe apenas conteúdo que você tem direito de usar e respeite os Termos de Serviço do YouTube."
       },
       {
-        "question": "Por que um link não carrega?",
+        "question": "Por que um download do YouTube falhou?",
+        "answer": "Às vezes o YouTube bloqueia pedidos vindos de servidores por um tempo. Tente novamente mais tarde, ou escolha uma resolução menor se o vídeo for longo. Vídeos maiores que 500 MB não podem ser processados."
+      },
+      {
+        "question": "Por que um link direto não carrega?",
         "answer": "Muitos servidores não permitem que outros sites leiam seus arquivos pelo navegador. Baixe o arquivo e envie-o aqui."
       },
       {

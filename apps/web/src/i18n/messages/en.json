@@ -108,7 +108,18 @@
     "noVideoStream": "This file has no video, so it cannot be converted to MP4. Choose MP3.",
     "emptyFile": "This file is empty.",
     "engineLoadFailed": "Could not load the converter. Check your connection and try again.",
-    "conversionFailed": "The conversion failed. The file may be corrupted or use an unsupported format."
+    "conversionFailed": "The conversion failed. The file may be corrupted or use an unsupported format.",
+    "youtubeUseTab": "This is a YouTube link. Use the YouTube source above.",
+    "youtubeInvalidUrl": "This is not a valid YouTube video link.",
+    "youtubeBlocked": "YouTube is temporarily blocking our server. Please try again later.",
+    "youtubeUnavailable": "This video is unavailable, private or has been removed.",
+    "youtubeAgeRestricted": "This video is age-restricted and cannot be downloaded.",
+    "youtubeLive": "Live streams and premieres cannot be downloaded.",
+    "youtubeTooLarge": "This video is too large (the limit is 500 MB). Choose a lower resolution or MP3.",
+    "youtubeNoFormats": "No downloadable format was found for this video.",
+    "youtubeDisabled": "YouTube downloads are turned off on this server.",
+    "youtubeEngine": "The server could not start the downloader. Please try again later.",
+    "youtubeFailed": "Could not download this video from YouTube. Please try again."
   },
   "seo": {
     "homeTitle": "OpenTools — Free online tools. Useful tools. Zero nonsense.",
@@ -184,10 +195,10 @@
       "fileNone": "No file selected",
       "urlLabel": "Direct link to a media file",
       "urlPlaceholder": "https://example.com/video.mp4",
-      "urlNote": "Only direct links to files work. Video platforms are not supported, and the host must allow downloads from the browser.",
+      "urlNote": "Only direct links to files work, and the host must allow downloads from the browser. For YouTube, use the YouTube source.",
       "loadUrl": "Load file",
       "fetching": "Loading file…",
-      "rightsNote": "Only convert files you own or have permission to use.",
+      "rightsNote": "Only convert or download content you own or have permission to use.",
       "infoName": "Name",
       "infoSize": "Size",
       "infoDuration": "Duration",
@@ -209,7 +220,24 @@
       "resultSize": "{size}",
       "again": "Convert another file",
       "engineNote": "The converter engine (about 32 MB) is downloaded once from a public CDN. Your file is never uploaded.",
-      "needFile": "Choose a file first."
+      "needFile": "Choose a file first.",
+      "modeYoutube": "YouTube",
+      "youtubeLabel": "YouTube video link",
+      "youtubePlaceholder": "https://www.youtube.com/watch?v=…",
+      "youtubeLoad": "Find video",
+      "youtubeFetching": "Finding video…",
+      "youtubeNote": "Our server fetches the video from YouTube and your browser converts it. Only download content you have the right to use, and respect YouTube’s Terms of Service.",
+      "youtubeNone": "No video selected",
+      "infoTitle": "Title",
+      "infoChannel": "Channel",
+      "resolution": "Resolution",
+      "resolutionOption": "{height}p · ~{size}",
+      "resolutionAuto": "Best available",
+      "youtubeConvert": "Download {format}",
+      "youtubeConnecting": "Connecting to YouTube…",
+      "youtubeDownloading": "Downloading from YouTube…",
+      "youtubeEngineNote": "The video is relayed by the OpenTools server and never stored. Converting to MP3 or joining video and audio happens in your browser with the converter engine (about 32 MB, downloaded once from a public CDN).",
+      "needVideo": "Find a video first."
     }
   }
 }

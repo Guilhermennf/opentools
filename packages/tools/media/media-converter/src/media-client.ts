@@ -12,6 +12,8 @@ import {
 } from "./options";
 
 export * from "./options";
+export * from "./youtube";
+export * from "./youtube-client";
 export { loadEngine, DEFAULT_CORE_BASE, FFMPEG_CORE_VERSION } from "./engine";
 
 export const convertInputSchema = z.object({

@@ -63,7 +63,7 @@ describe("parseMediaUrl", () => {
     }
   });
   it("rejects video platforms, including subdomains and look-alikes only when real", () => {
-    for (const url of ["https://www.youtube.com/watch?v=x", "https://youtu.be/x", "https://m.youtube.com/x", "https://vimeo.com/1", "https://x.com/a/status/1"]) {
+    for (const url of ["https://vimeo.com/1", "https://x.com/a/status/1", "https://www.tiktok.com/@a/video/1"]) {
       expect(() => parseMediaUrl(url), url).toThrowError(/platformNotSupported/);
     }
     expect(isPlatformHost("notyoutube.com")).toBe(false);

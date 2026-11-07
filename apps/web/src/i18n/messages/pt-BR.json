@@ -108,7 +108,18 @@
     "noVideoStream": "Este arquivo não tem vídeo, então não pode virar MP4. Escolha MP3.",
     "emptyFile": "Este arquivo está vazio.",
     "engineLoadFailed": "Não foi possível carregar o conversor. Verifique sua conexão e tente novamente.",
-    "conversionFailed": "A conversão falhou. O arquivo pode estar corrompido ou usar um formato não suportado."
+    "conversionFailed": "A conversão falhou. O arquivo pode estar corrompido ou usar um formato não suportado.",
+    "youtubeUseTab": "Este é um link do YouTube. Use a origem YouTube acima.",
+    "youtubeInvalidUrl": "Este não é um link válido de vídeo do YouTube.",
+    "youtubeBlocked": "O YouTube está bloqueando nosso servidor temporariamente. Tente novamente mais tarde.",
+    "youtubeUnavailable": "Este vídeo está indisponível, é privado ou foi removido.",
+    "youtubeAgeRestricted": "Este vídeo tem restrição de idade e não pode ser baixado.",
+    "youtubeLive": "Transmissões ao vivo e estreias não podem ser baixadas.",
+    "youtubeTooLarge": "Este vídeo é grande demais (limite de 500 MB). Escolha uma resolução menor ou MP3.",
+    "youtubeNoFormats": "Nenhum formato disponível para download foi encontrado neste vídeo.",
+    "youtubeDisabled": "O download do YouTube está desativado neste servidor.",
+    "youtubeEngine": "O servidor não conseguiu iniciar o downloader. Tente novamente mais tarde.",
+    "youtubeFailed": "Não foi possível baixar este vídeo do YouTube. Tente novamente."
   },
   "seo": {
     "homeTitle": "OpenTools — Ferramentas online grátis. Ferramentas úteis. Zero complicação.",
@@ -184,10 +195,10 @@
       "fileNone": "Nenhum arquivo selecionado",
       "urlLabel": "Link direto para um arquivo de mídia",
       "urlPlaceholder": "https://exemplo.com/video.mp4",
-      "urlNote": "Só funcionam links diretos para arquivos. Plataformas de vídeo não são suportadas, e o servidor precisa permitir downloads pelo navegador.",
+      "urlNote": "Só funcionam links diretos para arquivos, e o servidor precisa permitir downloads pelo navegador. Para o YouTube, use a origem YouTube.",
       "loadUrl": "Carregar arquivo",
       "fetching": "Carregando arquivo…",
-      "rightsNote": "Converta apenas arquivos que você possui ou tem permissão para usar.",
+      "rightsNote": "Converta ou baixe apenas conteúdo que você possui ou tem permissão para usar.",
       "infoName": "Nome",
       "infoSize": "Tamanho",
       "infoDuration": "Duração",
@@ -209,7 +220,24 @@
       "resultSize": "{size}",
       "again": "Converter outro arquivo",
       "engineNote": "O motor de conversão (cerca de 32 MB) é baixado uma vez de uma CDN pública. Seu arquivo nunca é enviado.",
-      "needFile": "Escolha um arquivo primeiro."
+      "needFile": "Escolha um arquivo primeiro.",
+      "modeYoutube": "YouTube",
+      "youtubeLabel": "Link do vídeo do YouTube",
+      "youtubePlaceholder": "https://www.youtube.com/watch?v=…",
+      "youtubeLoad": "Buscar vídeo",
+      "youtubeFetching": "Buscando vídeo…",
+      "youtubeNote": "Nosso servidor busca o vídeo no YouTube e o seu navegador faz a conversão. Baixe apenas conteúdo que você tem direito de usar e respeite os Termos de Serviço do YouTube.",
+      "youtubeNone": "Nenhum vídeo selecionado",
+      "infoTitle": "Título",
+      "infoChannel": "Canal",
+      "resolution": "Resolução",
+      "resolutionOption": "{height}p · ~{size}",
+      "resolutionAuto": "Melhor disponível",
+      "youtubeConvert": "Baixar {format}",
+      "youtubeConnecting": "Conectando ao YouTube…",
+      "youtubeDownloading": "Baixando do YouTube…",
+      "youtubeEngineNote": "O vídeo passa pelo servidor do OpenTools e nunca é armazenado. A conversão para MP3 ou a junção de vídeo e áudio acontece no seu navegador com o motor de conversão (cerca de 32 MB, baixado uma vez de uma CDN pública).",
+      "needVideo": "Busque um vídeo primeiro."
     }
   }
 }

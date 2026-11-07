@@ -33,6 +33,11 @@ export function buildFfmpegArgs(input: string, output: string, o: ConvertOptions
   ];
 }
 
+/** Muxes a video-only and an audio-only stream into one MP4 without re-encoding. */
+export function buildMergeArgs(video: string, audio: string, output: string): string[] {
+  return ["-i", video, "-i", audio, "-map", "0:v:0", "-map", "1:a:0", "-c", "copy", "-movflags", "+faststart", output];
+}
+
 const MEDIA_EXTENSIONS = new Set([
   "mp4", "m4v", "mov", "mkv", "webm", "avi", "wmv", "flv", "3gp", "mpg", "mpeg", "ts",
   "mp3", "m4a", "wav", "ogg", "oga", "opus", "flac", "aac", "wma", "aiff",
@@ -73,10 +78,14 @@ const PLATFORM_HOSTS = [
   "soundcloud.com", "spotify.com", "netflix.com", "primevideo.com", "disneyplus.com",
 ];
 
-export function isPlatformHost(hostname: string): boolean {
+const matchesHost = (hostname: string, hosts: string[]) => {
   const host = hostname.toLowerCase().replace(/^www[.]/, "");
-  return PLATFORM_HOSTS.some((p) => host === p || host.endsWith(`.${p}`));
-}
+  return hosts.some((p) => host === p || host.endsWith(`.${p}`));
+};
+
+export const isPlatformHost = (hostname: string) => matchesHost(hostname, PLATFORM_HOSTS);
+/** YouTube links have their own source (downloaded by the server with yt-dlp). */
+export const isYoutubeHost = (hostname: string) => matchesHost(hostname, ["youtube.com", "youtu.be", "youtube-nocookie.com"]);
 
 /** Validates a user-typed link. Only direct links to files are supported. */
 export function parseMediaUrl(raw: string): URL {
@@ -89,6 +98,7 @@ export function parseMediaUrl(raw: string): URL {
   if ((url.protocol !== "https:" && url.protocol !== "http:") || url.username || url.password) {
     throw new ToolError("VALIDATION", "errors.invalidUrl");
   }
+  if (isYoutubeHost(url.hostname)) throw new ToolError("UNSUPPORTED", "errors.youtubeUseTab");
   if (isPlatformHost(url.hostname)) throw new ToolError("UNSUPPORTED", "errors.platformNotSupported");
   return url;
 }

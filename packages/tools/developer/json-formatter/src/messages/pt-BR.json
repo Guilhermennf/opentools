@@ -8,6 +8,33 @@
   },
   "content": {
     "technical": "A análise usa o parser JSON nativo do navegador. A entrada é validada antes de ser formatada ou minificada.",
-    "privacy": "Seu JSON nunca sai do navegador. Nada é enviado a um servidor."
+    "privacy": "Seu JSON nunca sai do navegador. Nada é enviado a um servidor.",
+    "instructions": [
+      "Cole seu JSON ou clique em Exemplo.",
+      "Clique em Formatar, Minificar ou Validar. Escolha a indentação antes, se quiser.",
+      "Copie a saída. Os erros mostram a linha e a coluna."
+    ],
+    "examples": [
+      "Entrada: {\"a\":1,\"b\":[true,null]}",
+      "Formatado: um valor por linha, com indentação."
+    ],
+    "faq": [
+      {
+        "question": "Meu JSON é enviado para um servidor?",
+        "answer": "Não. Tudo roda no seu navegador e nada é enviado."
+      },
+      {
+        "question": "Números grandes e a ordem das chaves são preservados?",
+        "answer": "Sim. A ferramenta reformata o próprio texto, então números como 12345678901234567890, a ordem das chaves e chaves duplicadas ficam exatamente como foram escritos."
+      },
+      {
+        "question": "Comentários ou vírgulas sobrando são aceitos?",
+        "answer": "Não. A ferramenta segue o JSON estrito, então comentários, vírgulas no final e aspas simples aparecem como erros."
+      },
+      {
+        "question": "Como os erros são mostrados?",
+        "answer": "Com a linha, a coluna, o caractere problemático e uma explicação curta no seu idioma."
+      }
+    ]
   }
 }

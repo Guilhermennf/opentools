@@ -6,7 +6,7 @@ import { routing } from "@/i18n/routing";
 import { registry } from "@/tools/registry";
 import { ToolShell } from "@/components/tool-shell";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { breadcrumbJsonLd, JsonLd, webApplicationJsonLd } from "@/lib/seo/json-ld";
+import { breadcrumbJsonLd, faqJsonLd, JsonLd, webApplicationJsonLd } from "@/lib/seo/json-ld";
 
 export const dynamicParams = false;
 
@@ -45,6 +45,7 @@ export default async function ToolPage({ params }: PageProps<"/[locale]/tools/[s
       <JsonLd
         data={[
           webApplicationJsonLd(tool, locale),
+          ...(tool.messages[locale].content?.faq?.length ? [faqJsonLd(tool.messages[locale].content.faq)] : []),
           breadcrumbJsonLd(locale, [
             { name: t("nav.tools"), path: "/tools" },
             { name: tool.messages[locale].name, path: `/tools/${slug}` },

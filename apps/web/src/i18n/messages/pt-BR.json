@@ -99,7 +99,8 @@
     "aborted": "A operação foi cancelada.",
     "invalidInput": "A entrada não é válida.",
     "unexpected": "Algo deu errado. Tente novamente.",
-    "unsupported": "Isso não é suportado."
+    "unsupported": "Isso não é suportado.",
+    "fileTooLarge": "Este arquivo é maior que 512 MB."
   },
   "seo": {
     "homeTitle": "OpenTools — Ferramentas online grátis. Ferramentas úteis. Zero complicação.",
@@ -110,5 +111,62 @@
     "aboutDescription": "Sobre o OpenTools: uma coleção gratuita, de código aberto e focada em privacidade de ferramentas online.",
     "communityTitle": "Comunidade",
     "communityDescription": "Sugira novas ferramentas, relate bugs e contribua com o OpenTools."
+  },
+  "toolUi": {
+    "hash": {
+      "tabs": "Tipo de entrada",
+      "tabText": "Texto",
+      "tabFile": "Arquivo",
+      "algorithm": "Algoritmo",
+      "textLabel": "Texto para gerar o hash",
+      "textPlaceholder": "Digite ou cole um texto…",
+      "textNote": "O texto é processado como UTF-8.",
+      "fileLabel": "Arquivo para gerar o hash",
+      "fileChoose": "Escolher arquivo",
+      "fileNone": "Nenhum arquivo selecionado",
+      "fileNote": "O conteúdo do arquivo é processado no seu navegador. O nome não entra no cálculo.",
+      "fileSelected": "{name} ({size})",
+      "generate": "Gerar hash",
+      "hashing": "Gerando…",
+      "result": "Hash {algorithm}",
+      "bits": "{bits} bits",
+      "copyHash": "Copiar hash",
+      "legacyWarning": "{algorithm} não é seguro contra colisões. Use apenas por compatibilidade ou como checksum, não para segurança.",
+      "emptyFile": "Escolha um arquivo primeiro."
+    },
+    "json": {
+      "input": "Entrada JSON",
+      "output": "Saída",
+      "placeholder": "Cole seu JSON aqui…",
+      "format": "Formatar",
+      "minify": "Minificar",
+      "validate": "Validar",
+      "example": "Exemplo",
+      "indentation": "Indentação",
+      "indent2": "2 espaços",
+      "indent4": "4 espaços",
+      "indentTab": "Tab",
+      "valid": "JSON válido",
+      "stats": "{size, number} bytes · profundidade {depth, number}",
+      "errorTitle": "JSON inválido",
+      "errorAt": "Linha {line}, coluna {column}",
+      "found": "Encontrado: {char}",
+      "foundEnd": "Encontrado: fim da entrada",
+      "emptyInput": "Cole algum JSON primeiro.",
+      "codes": {
+        "unexpectedEnd": "O JSON termina de forma inesperada. Falta algo, como um colchete ou aspas de fechamento.",
+        "unexpectedToken": "Caractere inesperado.",
+        "expectedPropertyName": "Era esperado um nome de propriedade entre aspas duplas.",
+        "expectedColon": "Era esperado dois-pontos (:) depois do nome da propriedade.",
+        "expectedCommaOrEnd": "Era esperada uma vírgula ou um fechamento.",
+        "trailingComma": "Vírgulas sobrando no final não são permitidas em JSON.",
+        "invalidNumber": "Este número não é válido em JSON.",
+        "invalidEscape": "Sequência de escape inválida em uma string.",
+        "controlCharacter": "Quebras de linha e caracteres de controle precisam de escape dentro de strings.",
+        "unterminatedString": "Esta string não tem aspas de fechamento.",
+        "extraContent": "Há conteúdo inesperado depois do fim do valor JSON.",
+        "tooDeep": "O JSON tem aninhamento profundo demais."
+      }
+    }
   }
 }

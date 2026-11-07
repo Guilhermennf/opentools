@@ -15,7 +15,7 @@ export const hashGenerator: ToolDefinition = {
     },
     runtime: "worker",
     version: "0.1.0",
-    status: "coming-soon",
+    status: "stable",
     related: ["json-formatter"],
   },
   ascii,

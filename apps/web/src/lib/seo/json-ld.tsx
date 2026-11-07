@@ -53,3 +53,13 @@ export const breadcrumbJsonLd = (
     item: localizedUrl(locale, item.path),
   })),
 });
+
+export const faqJsonLd = (faq: { question: string; answer: string }[]): JsonLdData => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+});

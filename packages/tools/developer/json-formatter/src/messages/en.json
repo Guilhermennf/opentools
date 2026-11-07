@@ -8,6 +8,33 @@
   },
   "content": {
     "technical": "Parsing uses the browser's native JSON parser. Valid input is validated before it is formatted or minified.",
-    "privacy": "Your JSON never leaves your browser. Nothing is sent to a server."
+    "privacy": "Your JSON never leaves your browser. Nothing is sent to a server.",
+    "instructions": [
+      "Paste your JSON, or click Example.",
+      "Click Format, Minify or Validate. Pick the indentation first if you like.",
+      "Copy the output. Errors show the line and column."
+    ],
+    "examples": [
+      "Input: {\"a\":1,\"b\":[true,null]}",
+      "Formatted: one value per line, indented."
+    ],
+    "faq": [
+      {
+        "question": "Is my JSON sent to a server?",
+        "answer": "No. Everything runs in your browser and nothing is uploaded."
+      },
+      {
+        "question": "Are big numbers and key order preserved?",
+        "answer": "Yes. The tool reformats the text itself, so numbers like 12345678901234567890, key order and duplicate keys are kept exactly as written."
+      },
+      {
+        "question": "Are comments or trailing commas allowed?",
+        "answer": "No. The tool follows strict JSON, so comments, trailing commas and single quotes are reported as errors."
+      },
+      {
+        "question": "How are errors reported?",
+        "answer": "With the line, the column, the offending character and a short explanation in your language."
+      }
+    ]
   }
 }

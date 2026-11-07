@@ -7,8 +7,41 @@
     "description": "Free online hash generator for text and files. MD5, SHA-1, SHA-256, SHA-384 and SHA-512, computed locally in your browser."
   },
   "content": {
-    "formats": ["MD5 (128 bits)", "SHA-1 (160 bits)", "SHA-256 (256 bits)", "SHA-384 (384 bits)", "SHA-512 (512 bits)"],
+    "formats": [
+      "MD5 (128 bits)",
+      "SHA-1 (160 bits)",
+      "SHA-256 (256 bits)",
+      "SHA-384 (384 bits)",
+      "SHA-512 (512 bits)"
+    ],
     "technical": "SHA-1, SHA-256, SHA-384 and SHA-512 use the browser's Web Crypto API. MD5 and SHA-1 are provided for compatibility and legacy use, not for security-sensitive applications.",
-    "privacy": "Everything runs locally in your browser. Your text and files are never sent to a server."
+    "privacy": "Everything runs locally in your browser. Your text and files are never sent to a server.",
+    "instructions": [
+      "Choose Text or File.",
+      "Pick an algorithm. SHA-256 is a good default.",
+      "Click Generate hash, then copy the result."
+    ],
+    "examples": [
+      "SHA-256 of abc: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+      "MD5 of abc: 900150983cd24fb0d6963f7d28e17f72"
+    ],
+    "faq": [
+      {
+        "question": "Is my text or file uploaded anywhere?",
+        "answer": "No. Hashing runs in your browser. Large inputs are processed in a Web Worker, still on your device."
+      },
+      {
+        "question": "Which algorithm should I use?",
+        "answer": "Use SHA-256 or stronger for integrity checks. MD5 and SHA-1 are only for compatibility with legacy systems and checksums."
+      },
+      {
+        "question": "Why do I get a different hash somewhere else?",
+        "answer": "Text is hashed as UTF-8. A trailing newline, extra spaces or a different encoding change the result."
+      },
+      {
+        "question": "Is there a file size limit?",
+        "answer": "Files up to 512 MB, because the browser reads the whole file into memory to compute SHA hashes."
+      }
+    ]
   }
 }

@@ -88,7 +88,7 @@ export async function ToolShell({ tool, locale, related }: ToolShellProps) {
       ) : null}
       {c?.examples?.length ? (
         <Section title={t("toolShell.examples")}>
-          <ul className="space-y-2 font-mono text-sm">
+          <ul className="space-y-2 font-mono text-sm break-all">
             {c.examples.map((e) => (
               <li key={e}>{e}</li>
             ))}

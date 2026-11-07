@@ -99,7 +99,8 @@
     "aborted": "The operation was cancelled.",
     "invalidInput": "The input is not valid.",
     "unexpected": "Something went wrong. Please try again.",
-    "unsupported": "This is not supported."
+    "unsupported": "This is not supported.",
+    "fileTooLarge": "This file is larger than 512 MB."
   },
   "seo": {
     "homeTitle": "OpenTools — Free online tools. Useful tools. Zero nonsense.",
@@ -110,5 +111,62 @@
     "aboutDescription": "About OpenTools: a free, open-source and privacy-first collection of online tools.",
     "communityTitle": "Community",
     "communityDescription": "Suggest new tools, report bugs and contribute to OpenTools."
+  },
+  "toolUi": {
+    "hash": {
+      "tabs": "Input type",
+      "tabText": "Text",
+      "tabFile": "File",
+      "algorithm": "Algorithm",
+      "textLabel": "Text to hash",
+      "textPlaceholder": "Type or paste text…",
+      "textNote": "Text is hashed as UTF-8.",
+      "fileLabel": "File to hash",
+      "fileChoose": "Choose a file",
+      "fileNone": "No file selected",
+      "fileNote": "The file content is hashed in your browser. Its name is not included.",
+      "fileSelected": "{name} ({size})",
+      "generate": "Generate hash",
+      "hashing": "Hashing…",
+      "result": "{algorithm} hash",
+      "bits": "{bits} bits",
+      "copyHash": "Copy hash",
+      "legacyWarning": "{algorithm} is not secure against collisions. Use it only for compatibility or checksums, not for security.",
+      "emptyFile": "Choose a file first."
+    },
+    "json": {
+      "input": "JSON input",
+      "output": "Output",
+      "placeholder": "Paste your JSON here…",
+      "format": "Format",
+      "minify": "Minify",
+      "validate": "Validate",
+      "example": "Example",
+      "indentation": "Indentation",
+      "indent2": "2 spaces",
+      "indent4": "4 spaces",
+      "indentTab": "Tab",
+      "valid": "Valid JSON",
+      "stats": "{size, number} bytes · depth {depth, number}",
+      "errorTitle": "Invalid JSON",
+      "errorAt": "Line {line}, column {column}",
+      "found": "Found: {char}",
+      "foundEnd": "Found: end of input",
+      "emptyInput": "Paste some JSON first.",
+      "codes": {
+        "unexpectedEnd": "The JSON ends unexpectedly. Something is missing, such as a closing bracket or quote.",
+        "unexpectedToken": "Unexpected character.",
+        "expectedPropertyName": "Expected a property name in double quotes.",
+        "expectedColon": "Expected a colon (:) after the property name.",
+        "expectedCommaOrEnd": "Expected a comma or a closing bracket.",
+        "trailingComma": "Trailing commas are not allowed in JSON.",
+        "invalidNumber": "This number is not valid JSON.",
+        "invalidEscape": "Invalid escape sequence in a string.",
+        "controlCharacter": "Line breaks and control characters must be escaped inside strings.",
+        "unterminatedString": "This string is missing its closing quote.",
+        "extraContent": "Unexpected content after the end of the JSON value.",
+        "tooDeep": "The JSON is nested too deeply."
+      }
+    }
   }
 }

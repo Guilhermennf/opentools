@@ -8,7 +8,7 @@ Ferramentas online gratuitas, de código aberto e focadas em privacidade, em ing
 
 ## Status
 
-Phases 01 (foundation) and 02 (core architecture) of [the product spec](./my-toolbox-idea.md) are implemented. The three MVP tools exist as registered, bilingual pages marked "coming soon"; their interactive UIs land in Phase 03.
+Phases 01-02 (foundation, core architecture) and Phase 03 for **Hash Generator** and **JSON Formatter** are done. The Media Converter is registered as "coming soon". Next: Media Converter, then community (Phase 04) and launch SEO (Phase 05).
 
 ## Stack
 

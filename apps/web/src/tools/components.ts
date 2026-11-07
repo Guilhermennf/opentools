@@ -1,8 +1,11 @@
+import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
 
 /**
- * Maps a tool slug to its interactive UI. Empty until Phase 03; the tool page
- * falls back to a "coming soon" state when a slug has no component.
- * Example: "json-formatter": dynamic(() => import("@opentools/tool-json-formatter/ui")),
+ * Maps a tool slug to its interactive UI. A slug without an entry renders the
+ * "coming soon" state. Heavy code is loaded lazily with next/dynamic.
  */
-export const toolComponents: Record<string, ComponentType | undefined> = {};
+export const toolComponents: Record<string, ComponentType | undefined> = {
+  "hash-generator": dynamic(() => import("./ui/hash-generator")),
+  "json-formatter": dynamic(() => import("./ui/json-formatter")),
+};

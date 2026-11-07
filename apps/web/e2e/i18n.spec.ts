@@ -55,9 +55,11 @@ test.describe("routes and SEO", () => {
     }
   }
 
-  test("unreleased tool pages are noindex", async ({ page }) => {
-    await page.goto("/en/tools/hash-generator");
+  test("unreleased tool pages are noindex, released ones are indexable", async ({ page }) => {
+    await page.goto("/en/tools/media-converter");
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+    await page.goto("/en/tools/hash-generator");
+    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
   });
 
   test("unknown tool slug is 404", async ({ request }) => {
@@ -105,7 +107,7 @@ test.describe("search, theme and layout", () => {
 
   test("no horizontal scroll at 375px", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
-    for (const p of ["/en", "/en/tools/media-converter", "/pt-BR/tools/hash-generator"]) {
+    for (const p of ["/en", "/en/tools/media-converter", "/pt-BR/tools/hash-generator", "/en/tools/hash-generator", "/en/tools/json-formatter", "/pt-BR/tools/json-formatter"]) {
       await page.goto(p);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
       expect(overflow, p).toBe(false);

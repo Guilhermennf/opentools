@@ -28,3 +28,8 @@ Packages are source-only (no build step); Next transpiles them via `transpilePac
 ## Execution
 
 Client-side by default. `runTool` validates input with Zod and maps failures to `ToolError` with an i18n `messageKey`. A Web Worker bridge arrives with the Hash Generator (Phase 03). The Hono API Worker arrives in Phase 04.
+
+## Tool implementations
+
+- **Hash Generator** (`packages/tools/developer/hash-generator`): SHA-1/256/384/512 via Web Crypto, MD5 in pure TypeScript (processed in place, no padded copy). Large inputs run in a module Web Worker; files up to 512 MB.
+- **JSON Formatter** (`packages/tools/developer/json-formatter`): a hand-written parser instead of `JSON.parse` + `JSON.stringify`. It reports exact line/column with a machine-readable error code (localized in the UI) and keeps number literals, key order and duplicate keys verbatim. Tested for agreement with `JSON.parse`.

@@ -7,8 +7,41 @@
     "description": "Gerador de hash online e gratuito para texto e arquivos. MD5, SHA-1, SHA-256, SHA-384 e SHA-512, calculados localmente no seu navegador."
   },
   "content": {
-    "formats": ["MD5 (128 bits)", "SHA-1 (160 bits)", "SHA-256 (256 bits)", "SHA-384 (384 bits)", "SHA-512 (512 bits)"],
+    "formats": [
+      "MD5 (128 bits)",
+      "SHA-1 (160 bits)",
+      "SHA-256 (256 bits)",
+      "SHA-384 (384 bits)",
+      "SHA-512 (512 bits)"
+    ],
     "technical": "SHA-1, SHA-256, SHA-384 e SHA-512 usam a Web Crypto API do navegador. MD5 e SHA-1 existem por compatibilidade e uso legado, não para aplicações sensíveis à segurança.",
-    "privacy": "Tudo roda localmente no seu navegador. Seu texto e seus arquivos nunca são enviados a um servidor."
+    "privacy": "Tudo roda localmente no seu navegador. Seu texto e seus arquivos nunca são enviados a um servidor.",
+    "instructions": [
+      "Escolha Texto ou Arquivo.",
+      "Selecione um algoritmo. SHA-256 é um bom padrão.",
+      "Clique em Gerar hash e copie o resultado."
+    ],
+    "examples": [
+      "SHA-256 de abc: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+      "MD5 de abc: 900150983cd24fb0d6963f7d28e17f72"
+    ],
+    "faq": [
+      {
+        "question": "Meu texto ou arquivo é enviado para algum lugar?",
+        "answer": "Não. O hash é calculado no seu navegador. Entradas grandes são processadas em um Web Worker, ainda no seu dispositivo."
+      },
+      {
+        "question": "Qual algoritmo devo usar?",
+        "answer": "Use SHA-256 ou mais forte para verificar integridade. MD5 e SHA-1 servem apenas por compatibilidade com sistemas antigos e para checksums."
+      },
+      {
+        "question": "Por que o hash é diferente em outro lugar?",
+        "answer": "O texto é processado como UTF-8. Uma quebra de linha no final, espaços extras ou outra codificação mudam o resultado."
+      },
+      {
+        "question": "Existe limite de tamanho de arquivo?",
+        "answer": "Arquivos de até 512 MB, porque o navegador lê o arquivo inteiro na memória para calcular os hashes SHA."
+      }
+    ]
   }
 }

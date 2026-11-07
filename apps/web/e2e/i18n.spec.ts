@@ -55,11 +55,11 @@ test.describe("routes and SEO", () => {
     }
   }
 
-  test("unreleased tool pages are noindex, released ones are indexable", async ({ page }) => {
-    await page.goto("/en/tools/media-converter");
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
-    await page.goto("/en/tools/hash-generator");
-    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
+  test("stable tool pages are indexable", async ({ page }) => {
+    for (const slug of ["hash-generator", "json-formatter", "media-converter"]) {
+      await page.goto(`/en/tools/${slug}`);
+      await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
+    }
   });
 
   test("unknown tool slug is 404", async ({ request }) => {

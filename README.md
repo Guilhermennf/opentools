@@ -8,7 +8,7 @@ Ferramentas online gratuitas, de código aberto e focadas em privacidade, em ing
 
 ## Status
 
-Phases 01-02 (foundation, core architecture) and Phase 03 for **Hash Generator** and **JSON Formatter** are done. The Media Converter is registered as "coming soon". Next: Media Converter, then community (Phase 04) and launch SEO (Phase 05).
+Phases 01-03 are done: foundation, core architecture and the three MVP tools (Hash Generator, JSON Formatter, Media Converter). Next: community suggestions (Phase 04) and launch SEO and deploy (Phase 05).
 
 ## Stack
 

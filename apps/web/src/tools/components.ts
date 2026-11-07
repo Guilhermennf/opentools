@@ -8,4 +8,5 @@ import type { ComponentType } from "react";
 export const toolComponents: Record<string, ComponentType | undefined> = {
   "hash-generator": dynamic(() => import("./ui/hash-generator")),
   "json-formatter": dynamic(() => import("./ui/json-formatter")),
+  "media-converter": dynamic(() => import("./ui/media-converter")),
 };

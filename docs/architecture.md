@@ -33,3 +33,4 @@ Client-side by default. `runTool` validates input with Zod and maps failures to 
 
 - **Hash Generator** (`packages/tools/developer/hash-generator`): SHA-1/256/384/512 via Web Crypto, MD5 in pure TypeScript (processed in place, no padded copy). Large inputs run in a module Web Worker; files up to 512 MB.
 - **JSON Formatter** (`packages/tools/developer/json-formatter`): a hand-written parser instead of `JSON.parse` + `JSON.stringify`. It reports exact line/column with a machine-readable error code (localized in the UI) and keeps number literals, key order and duplicate keys verbatim. Tested for agreement with `JSON.parse`.
+- **Media Converter** (`packages/tools/media/media-converter`): FFmpeg.wasm converts a user's file (or a direct link, never a video platform) to MP3 or MP4 in the browser. Pure helpers (arguments, names, URL checks) are unit tested; the engine is client-only. See ADR 0004.

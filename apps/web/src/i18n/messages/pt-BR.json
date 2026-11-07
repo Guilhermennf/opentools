@@ -100,7 +100,15 @@
     "invalidInput": "A entrada não é válida.",
     "unexpected": "Algo deu errado. Tente novamente.",
     "unsupported": "Isso não é suportado.",
-    "fileTooLarge": "Este arquivo é maior que 512 MB."
+    "fileTooLarge": "Este arquivo é maior que 512 MB.",
+    "invalidUrl": "Este não é um link http(s) válido.",
+    "platformNotSupported": "Links de plataformas de vídeo não são suportados. Use um arquivo seu ou um link direto para um arquivo de mídia.",
+    "fetchFailed": "Não foi possível baixar este link. O servidor pode bloquear downloads pelo navegador. Baixe o arquivo e envie-o aqui.",
+    "notMedia": "Isto não parece ser um arquivo de áudio ou vídeo.",
+    "noVideoStream": "Este arquivo não tem vídeo, então não pode virar MP4. Escolha MP3.",
+    "emptyFile": "Este arquivo está vazio.",
+    "engineLoadFailed": "Não foi possível carregar o conversor. Verifique sua conexão e tente novamente.",
+    "conversionFailed": "A conversão falhou. O arquivo pode estar corrompido ou usar um formato não suportado."
   },
   "seo": {
     "homeTitle": "OpenTools — Ferramentas online grátis. Ferramentas úteis. Zero complicação.",
@@ -167,6 +175,41 @@
         "extraContent": "Há conteúdo inesperado depois do fim do valor JSON.",
         "tooDeep": "O JSON tem aninhamento profundo demais."
       }
+    },
+    "media": {
+      "modeFile": "Arquivo",
+      "modeUrl": "Link",
+      "source": "Origem",
+      "fileLabel": "Arquivo de mídia",
+      "fileNone": "Nenhum arquivo selecionado",
+      "urlLabel": "Link direto para um arquivo de mídia",
+      "urlPlaceholder": "https://exemplo.com/video.mp4",
+      "urlNote": "Só funcionam links diretos para arquivos. Plataformas de vídeo não são suportadas, e o servidor precisa permitir downloads pelo navegador.",
+      "loadUrl": "Carregar arquivo",
+      "fetching": "Carregando arquivo…",
+      "rightsNote": "Converta apenas arquivos que você possui ou tem permissão para usar.",
+      "infoName": "Nome",
+      "infoSize": "Tamanho",
+      "infoDuration": "Duração",
+      "infoResolution": "Resolução",
+      "format": "Converter para",
+      "mp4": "MP4 (vídeo)",
+      "mp3": "MP3 (áudio)",
+      "bitrate": "Qualidade do áudio",
+      "bitrateOption": "{kbps} kbps",
+      "quality": "Qualidade do vídeo",
+      "qualityStandard": "Padrão (arquivo menor)",
+      "qualityHigh": "Alta (arquivo maior)",
+      "convert": "Converter",
+      "loadingEngine": "Carregando o conversor (cerca de 32 MB, só na primeira vez)…",
+      "converting": "Convertendo…",
+      "cancel": "Cancelar",
+      "done": "Conversão concluída",
+      "download": "Baixar {name}",
+      "resultSize": "{size}",
+      "again": "Converter outro arquivo",
+      "engineNote": "O motor de conversão (cerca de 32 MB) é baixado uma vez de uma CDN pública. Seu arquivo nunca é enviado.",
+      "needFile": "Escolha um arquivo primeiro."
     }
   }
 }

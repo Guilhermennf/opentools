@@ -100,7 +100,15 @@
     "invalidInput": "The input is not valid.",
     "unexpected": "Something went wrong. Please try again.",
     "unsupported": "This is not supported.",
-    "fileTooLarge": "This file is larger than 512 MB."
+    "fileTooLarge": "This file is larger than 512 MB.",
+    "invalidUrl": "This is not a valid http(s) link.",
+    "platformNotSupported": "Links to video platforms are not supported. Use a file you own or a direct link to a media file.",
+    "fetchFailed": "Could not download this link. The host may block downloads from the browser. Download the file and upload it here instead.",
+    "notMedia": "This does not look like an audio or video file.",
+    "noVideoStream": "This file has no video, so it cannot be converted to MP4. Choose MP3.",
+    "emptyFile": "This file is empty.",
+    "engineLoadFailed": "Could not load the converter. Check your connection and try again.",
+    "conversionFailed": "The conversion failed. The file may be corrupted or use an unsupported format."
   },
   "seo": {
     "homeTitle": "OpenTools — Free online tools. Useful tools. Zero nonsense.",
@@ -167,6 +175,41 @@
         "extraContent": "Unexpected content after the end of the JSON value.",
         "tooDeep": "The JSON is nested too deeply."
       }
+    },
+    "media": {
+      "modeFile": "File",
+      "modeUrl": "Link",
+      "source": "Source",
+      "fileLabel": "Media file",
+      "fileNone": "No file selected",
+      "urlLabel": "Direct link to a media file",
+      "urlPlaceholder": "https://example.com/video.mp4",
+      "urlNote": "Only direct links to files work. Video platforms are not supported, and the host must allow downloads from the browser.",
+      "loadUrl": "Load file",
+      "fetching": "Loading file…",
+      "rightsNote": "Only convert files you own or have permission to use.",
+      "infoName": "Name",
+      "infoSize": "Size",
+      "infoDuration": "Duration",
+      "infoResolution": "Resolution",
+      "format": "Convert to",
+      "mp4": "MP4 (video)",
+      "mp3": "MP3 (audio)",
+      "bitrate": "Audio quality",
+      "bitrateOption": "{kbps} kbps",
+      "quality": "Video quality",
+      "qualityStandard": "Standard (smaller file)",
+      "qualityHigh": "High (larger file)",
+      "convert": "Convert",
+      "loadingEngine": "Loading the converter (about 32 MB, first time only)…",
+      "converting": "Converting…",
+      "cancel": "Cancel",
+      "done": "Conversion finished",
+      "download": "Download {name}",
+      "resultSize": "{size}",
+      "again": "Convert another file",
+      "engineNote": "The converter engine (about 32 MB) is downloaded once from a public CDN. Your file is never uploaded.",
+      "needFile": "Choose a file first."
     }
   }
 }

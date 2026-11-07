@@ -7,8 +7,34 @@
     "description": "Free online media converter. Convert your own video and audio files to MP4 or MP3 locally in your browser, without uploading them."
   },
   "content": {
-    "formats": ["Video: MP4", "Audio: MP3"],
+    "formats": [
+      "Video: MP4",
+      "Audio: MP3"
+    ],
     "technical": "Conversion runs in your browser with FFmpeg compiled to WebAssembly. It only works on files you provide or direct links to publicly accessible files, and it does not bypass platform restrictions.",
-    "privacy": "Files are processed locally and are never stored by OpenTools. Nothing is uploaded unless a feature explicitly says otherwise."
+    "privacy": "Files are processed locally and are never stored by OpenTools. Nothing is uploaded unless a feature explicitly says otherwise.",
+    "instructions": [
+      "Choose a file, or paste a direct link to a media file.",
+      "Pick MP3 (audio) or MP4 (video) and the quality.",
+      "Click Convert, wait for it to finish, then download the result."
+    ],
+    "faq": [
+      {
+        "question": "Is my file uploaded to a server?",
+        "answer": "No. The conversion runs in your browser with FFmpeg compiled to WebAssembly. Only the converter engine (about 32 MB) is downloaded, once, from a public CDN."
+      },
+      {
+        "question": "Can I download videos from YouTube or other platforms?",
+        "answer": "No. This tool only converts files you provide or direct links to publicly accessible media files. It does not bypass platform restrictions or extract protected streams."
+      },
+      {
+        "question": "Why does a link fail to load?",
+        "answer": "Many hosts do not allow other sites to read their files from the browser. Download the file and upload it here instead."
+      },
+      {
+        "question": "Why is it slow, and is there a size limit?",
+        "answer": "Conversion uses your device and a single thread, so large videos take time. Files up to 500 MB are accepted."
+      }
+    ]
   }
 }

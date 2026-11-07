@@ -3,3 +3,4 @@ node_modules
 .open-next
 pnpm-lock.yaml
 my-toolbox-idea.md
+apps/web/public/ffmpeg

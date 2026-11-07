@@ -7,8 +7,34 @@
     "description": "Conversor de mídia online e gratuito. Converta seus próprios arquivos de vídeo e áudio para MP4 ou MP3 localmente no navegador, sem enviá-los."
   },
   "content": {
-    "formats": ["Vídeo: MP4", "Áudio: MP3"],
+    "formats": [
+      "Vídeo: MP4",
+      "Áudio: MP3"
+    ],
     "technical": "A conversão roda no navegador com FFmpeg compilado para WebAssembly. Funciona apenas com arquivos que você fornece ou links diretos para arquivos publicamente acessíveis, e não contorna restrições de plataformas.",
-    "privacy": "Os arquivos são processados localmente e nunca são armazenados pelo OpenTools. Nada é enviado, a menos que um recurso diga explicitamente o contrário."
+    "privacy": "Os arquivos são processados localmente e nunca são armazenados pelo OpenTools. Nada é enviado, a menos que um recurso diga explicitamente o contrário.",
+    "instructions": [
+      "Escolha um arquivo ou cole um link direto para um arquivo de mídia.",
+      "Selecione MP3 (áudio) ou MP4 (vídeo) e a qualidade.",
+      "Clique em Converter, aguarde terminar e baixe o resultado."
+    ],
+    "faq": [
+      {
+        "question": "Meu arquivo é enviado para um servidor?",
+        "answer": "Não. A conversão roda no seu navegador com FFmpeg compilado para WebAssembly. Só o motor de conversão (cerca de 32 MB) é baixado, uma vez, de uma CDN pública."
+      },
+      {
+        "question": "Posso baixar vídeos do YouTube ou de outras plataformas?",
+        "answer": "Não. Esta ferramenta só converte arquivos que você fornece ou links diretos para arquivos de mídia publicamente acessíveis. Ela não contorna restrições de plataformas nem extrai streams protegidos."
+      },
+      {
+        "question": "Por que um link não carrega?",
+        "answer": "Muitos servidores não permitem que outros sites leiam seus arquivos pelo navegador. Baixe o arquivo e envie-o aqui."
+      },
+      {
+        "question": "Por que é lento e existe limite de tamanho?",
+        "answer": "A conversão usa o seu dispositivo e uma única thread, então vídeos grandes demoram. Arquivos de até 500 MB são aceitos."
+      }
+    ]
   }
 }

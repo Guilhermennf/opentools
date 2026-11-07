@@ -11,9 +11,8 @@ export const labelClass = "label-mono mb-1.5 block";
 /** Shows a ToolError's i18n key (always "errors.<name>") translated, with a safe fallback. */
 export function ErrorFromKey({ messageKey }: { messageKey: string }) {
   const t = useTranslations("errors");
-  const name = messageKey.startsWith("errors.") ? messageKey.slice("errors.".length) : "unexpected";
-  const known = ["aborted", "invalidInput", "unexpected", "unsupported", "fileTooLarge"] as const;
-  const key = (known as readonly string[]).includes(name) ? (name as (typeof known)[number]) : "unexpected";
+  const name = messageKey.startsWith("errors.") ? messageKey.slice("errors.".length) : "";
+  const key = (t.has(name as "unexpected") ? name : "unexpected") as "unexpected";
   return <ToolErrorBox title={t(key)} />;
 }
 

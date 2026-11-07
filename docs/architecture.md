@@ -27,10 +27,10 @@ Packages are source-only (no build step); Next transpiles them via `transpilePac
 
 ## Execution
 
-Client-side by default. `runTool` validates input with Zod and maps failures to `ToolError` with an i18n `messageKey`. A Web Worker bridge arrives with the Hash Generator (Phase 03). The Hono API Worker arrives in Phase 04.
+Client-side by default (the Media Converter's YouTube relay is the exception, see ADR 0005). `runTool` validates input with Zod and maps failures to `ToolError` with an i18n `messageKey`. A Web Worker bridge arrives with the Hash Generator (Phase 03). The Hono API Worker arrives in Phase 04.
 
 ## Tool implementations
 
 - **Hash Generator** (`packages/tools/developer/hash-generator`): SHA-1/256/384/512 via Web Crypto, MD5 in pure TypeScript (processed in place, no padded copy). Large inputs run in a module Web Worker; files up to 512 MB.
 - **JSON Formatter** (`packages/tools/developer/json-formatter`): a hand-written parser instead of `JSON.parse` + `JSON.stringify`. It reports exact line/column with a machine-readable error code (localized in the UI) and keeps number literals, key order and duplicate keys verbatim. Tested for agreement with `JSON.parse`.
-- **Media Converter** (`packages/tools/media/media-converter`): FFmpeg.wasm converts a user's file (or a direct link, never a video platform) to MP3 or MP4 in the browser. Pure helpers (arguments, names, URL checks) are unit tested; the engine is client-only. See ADR 0004.
+- **Media Converter** (`packages/tools/media/media-converter`): FFmpeg.wasm converts a user's file or a direct link to MP3 or MP4 in the browser. YouTube links go through two Node.js routes (`apps/web/src/app/api/youtube`) that relay streams with yt-dlp; the browser then converts or merges them. Pure helpers (arguments, names, URL checks, format choice) are unit tested. See ADR 0004 and 0005.

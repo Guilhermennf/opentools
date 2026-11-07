@@ -4,7 +4,7 @@
 // the user's media never leaves the browser.
 import type { FFmpeg } from "@ffmpeg/ffmpeg";
 import { ToolError } from "@opentools/core";
-import { buildFfmpegArgs, mimeTypes, virtualInputName, type ConvertOptions } from "./options";
+import { buildFfmpegArgs, buildMergeArgs, mimeTypes, virtualInputName, type ConvertOptions } from "./options";
 
 export const FFMPEG_CORE_VERSION = "0.12.10";
 export const DEFAULT_CORE_BASE = `https://cdn.jsdelivr.net/npm/@ffmpeg/core@${FFMPEG_CORE_VERSION}/dist/esm`;
@@ -57,19 +57,20 @@ function dropEngine() {
   instance = null;
 }
 
-export interface ConvertRequest {
-  file: File;
-  options: ConvertOptions;
+interface FfmpegJob {
+  inputs: { name: string; data: Blob }[];
+  args: string[];
+  output: string;
+  mimeType: string;
   signal?: AbortSignal;
   onProgress?: (fraction: number) => void;
 }
 
-export async function convertMedia({ file, options, signal, onProgress }: ConvertRequest): Promise<Blob> {
+/** Writes the inputs, runs FFmpeg and returns the output, cleaning up the virtual FS. */
+async function runFfmpeg({ inputs, args, output, mimeType, signal, onProgress }: FfmpegJob): Promise<Blob> {
   const ffmpeg = await loadEngine();
   if (signal?.aborted) throw new ToolError("ABORTED", "errors.aborted");
 
-  const input = virtualInputName(file);
-  const output = `out.${options.format}`;
   const onFfmpegProgress = ({ progress }: { progress: number }) => {
     if (Number.isFinite(progress)) onProgress?.(Math.min(1, Math.max(0, progress)));
   };
@@ -78,14 +79,14 @@ export async function convertMedia({ file, options, signal, onProgress }: Conver
   ffmpeg.on("progress", onFfmpegProgress);
 
   try {
-    await ffmpeg.writeFile(input, new Uint8Array(await file.arrayBuffer()));
-    const code = await ffmpeg.exec(buildFfmpegArgs(input, output, options));
+    for (const { name, data } of inputs) await ffmpeg.writeFile(name, new Uint8Array(await data.arrayBuffer()));
+    const code = await ffmpeg.exec(args);
     if (signal?.aborted) throw new ToolError("ABORTED", "errors.aborted");
     if (code !== 0) throw new ToolError("EXECUTION", "errors.conversionFailed", { code });
     const data = (await ffmpeg.readFile(output)) as Uint8Array;
     if (data.byteLength === 0) throw new ToolError("EXECUTION", "errors.conversionFailed");
     onProgress?.(1);
-    return new Blob([data as BlobPart], { type: mimeTypes[options.format] });
+    return new Blob([data as BlobPart], { type: mimeType });
   } catch (error) {
     if (signal?.aborted) throw new ToolError("ABORTED", "errors.aborted");
     if (error instanceof ToolError) throw error;
@@ -96,7 +97,54 @@ export async function convertMedia({ file, options, signal, onProgress }: Conver
     signal?.removeEventListener("abort", onAbort);
     if (instance === ffmpeg) {
       ffmpeg.off("progress", onFfmpegProgress);
-      for (const name of [input, output]) await ffmpeg.deleteFile(name).catch(() => undefined);
+      for (const name of [...inputs.map((i) => i.name), output]) await ffmpeg.deleteFile(name).catch(() => undefined);
     }
   }
+}
+
+export interface ConvertRequest {
+  file: File;
+  options: ConvertOptions;
+  signal?: AbortSignal;
+  onProgress?: (fraction: number) => void;
+}
+
+export function convertMedia({ file, options, signal, onProgress }: ConvertRequest): Promise<Blob> {
+  const input = virtualInputName(file);
+  const output = `out.${options.format}`;
+  return runFfmpeg({
+    inputs: [{ name: input, data: file }],
+    args: buildFfmpegArgs(input, output, options),
+    output,
+    mimeType: mimeTypes[options.format],
+    signal,
+    onProgress,
+  });
+}
+
+export interface MergeRequest {
+  video: Blob;
+  audio: Blob;
+  /** Extensions used as format hints, e.g. "mp4" and "m4a". */
+  videoExt: string;
+  audioExt: string;
+  signal?: AbortSignal;
+  onProgress?: (fraction: number) => void;
+}
+
+/** Joins a video-only and an audio-only stream into an MP4 (stream copy, no re-encoding). */
+export function mergeVideoAudio({ video, audio, videoExt, audioExt, signal, onProgress }: MergeRequest): Promise<Blob> {
+  const v = virtualInputName({ name: `video.${videoExt}` });
+  const a = virtualInputName({ name: `audio.${audioExt}` }).replace("input", "input-audio");
+  return runFfmpeg({
+    inputs: [
+      { name: v, data: video },
+      { name: a, data: audio },
+    ],
+    args: buildMergeArgs(v, a, "out.mp4"),
+    output: "out.mp4",
+    mimeType: mimeTypes.mp4,
+    signal,
+    onProgress,
+  });
 }

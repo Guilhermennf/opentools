@@ -1,34 +1,39 @@
 {
   "name": "Media Converter",
-  "tagline": "Convert your own audio and video files to MP4 or MP3.",
-  "description": "Convert media files you own or are authorized to use to MP4 or MP3, locally in your browser. No protected streams, no uploads.",
+  "tagline": "Convert audio and video files, or YouTube videos, to MP4 or MP3.",
+  "description": "Convert media files to MP4 or MP3 in your browser, or download a YouTube video as MP4 or MP3. Only use content you own or are authorized to use.",
   "seo": {
-    "title": "Online Video to MP4 and Audio to MP3 Converter",
-    "description": "Free online media converter. Convert your own video and audio files to MP4 or MP3 locally in your browser, without uploading them."
+    "title": "YouTube to MP3 and MP4, Online Video and Audio Converter",
+    "description": "Free online media converter. Convert your video and audio files to MP4 or MP3 in your browser, or download YouTube videos as MP3 or MP4."
   },
   "content": {
     "formats": [
-      "Video: MP4",
-      "Audio: MP3"
+      "Video: MP4 (H.264 + AAC)",
+      "Audio: MP3 (128 to 320 kbps)",
+      "YouTube: MP4 up to 1080p, or MP3"
     ],
-    "technical": "Conversion runs in your browser with FFmpeg compiled to WebAssembly. It only works on files you provide or direct links to publicly accessible files, and it does not bypass platform restrictions.",
-    "privacy": "Files are processed locally and are never stored by OpenTools. Nothing is uploaded unless a feature explicitly says otherwise.",
+    "technical": "Conversion runs in your browser with FFmpeg compiled to WebAssembly. For YouTube links, the OpenTools server uses yt-dlp to relay the original video and audio streams; your browser then converts the audio to MP3 or joins video and audio into an MP4 without re-encoding.",
+    "privacy": "Your own files are processed locally and never uploaded. YouTube videos pass through the OpenTools server only while they download and are never stored.",
     "instructions": [
-      "Choose a file, or paste a direct link to a media file.",
-      "Pick MP3 (audio) or MP4 (video) and the quality.",
-      "Click Convert, wait for it to finish, then download the result."
+      "Choose a file, paste a direct link to a media file, or paste a YouTube link and click Find video.",
+      "Pick MP3 (audio) or MP4 (video) and the quality or resolution.",
+      "Start the conversion, wait for it to finish, then download the result."
     ],
     "faq": [
       {
         "question": "Is my file uploaded to a server?",
-        "answer": "No. The conversion runs in your browser with FFmpeg compiled to WebAssembly. Only the converter engine (about 32 MB) is downloaded, once, from a public CDN."
+        "answer": "No. Files you choose are converted in your browser with FFmpeg compiled to WebAssembly. Only the converter engine (about 32 MB) is downloaded, once, from a public CDN."
       },
       {
-        "question": "Can I download videos from YouTube or other platforms?",
-        "answer": "No. This tool only converts files you provide or direct links to publicly accessible media files. It does not bypass platform restrictions or extract protected streams."
+        "question": "Can I download YouTube videos?",
+        "answer": "Yes. Choose the YouTube source, paste a link and pick MP3 or MP4. The video must be public; private, members-only, age-restricted videos and live streams are not supported. Only download content you have the right to use, and respect YouTube’s Terms of Service."
       },
       {
-        "question": "Why does a link fail to load?",
+        "question": "Why did a YouTube download fail?",
+        "answer": "YouTube sometimes blocks requests from servers for a while. Try again later, or pick a lower resolution if the video is long. Videos larger than 500 MB cannot be processed."
+      },
+      {
+        "question": "Why does a direct link fail to load?",
         "answer": "Many hosts do not allow other sites to read their files from the browser. Download the file and upload it here instead."
       },
       {

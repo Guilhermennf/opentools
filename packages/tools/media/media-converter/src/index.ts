@@ -10,11 +10,12 @@ export const mediaConverter: ToolDefinition = {
     category: "media",
     icon: "clapperboard",
     keywords: {
-      en: ["video to mp4 converter", "video to mp3 converter", "online audio converter", "media converter"],
-      "pt-BR": ["conversor de vídeo mp4", "converter vídeo para mp3", "conversor de áudio online", "conversor de mídia"],
+      en: ["youtube to mp3", "youtube to mp4", "video to mp4 converter", "video to mp3 converter", "online audio converter", "media converter"],
+      "pt-BR": ["youtube para mp3", "baixar vídeo do youtube", "conversor de vídeo mp4", "converter vídeo para mp3", "conversor de áudio online", "conversor de mídia"],
     },
+    // Conversion stays in the browser; only YouTube downloads touch the server (yt-dlp relay).
     runtime: "browser",
-    version: "0.1.0",
+    version: "0.2.0",
     status: "stable",
     related: ["hash-generator"],
   },

@@ -98,9 +98,12 @@ test("loads a direct link and rejects video platforms", async ({ page }) => {
   );
   await page.goto("/pt-BR/tools/media-converter");
   await page.getByRole("radio", { name: "Link" }).click();
-  await page.getByLabel("Link direto para um arquivo de mídia").fill("https://www.youtube.com/watch?v=abc");
+  await page.getByLabel("Link direto para um arquivo de mídia").fill("https://vimeo.com/123");
   await page.getByRole("button", { name: "Carregar arquivo" }).click();
   await expect(page.getByRole("alert").filter({ hasText: "plataformas de vídeo" })).toBeVisible();
+  await page.getByLabel("Link direto para um arquivo de mídia").fill("https://www.youtube.com/watch?v=abc");
+  await page.getByRole("button", { name: "Carregar arquivo" }).click();
+  await expect(page.getByRole("alert").filter({ hasText: "Use a origem YouTube" })).toBeVisible();
   await page.getByLabel("Link direto para um arquivo de mídia").fill("https://files.example.test/tone.wav");
   await page.getByRole("button", { name: "Carregar arquivo" }).click();
   await expect(page.getByTestId("media-info")).toContainText("tone.wav");
@@ -112,4 +115,58 @@ test("reports an engine load failure clearly", async ({ page }) => {
   await upload(page, "Media file", "tone.wav", wav(), "audio/wav");
   await page.getByRole("button", { name: "Convert", exact: true }).click();
   await expect(page.getByRole("alert").filter({ hasText: "Could not load the converter" })).toBeVisible({ timeout: 30_000 });
+});
+
+const ytVideo = {
+  id: "dQw4w9WgXcQ",
+  title: "Test tone",
+  channel: "OpenTools",
+  duration: 1,
+  thumbnail: null,
+  audio: { formatId: "140", ext: "wav", size: 16_044 },
+  videos: [{ height: 360, video: { formatId: "18", ext: "mp4", size: 4 }, audio: null, size: 4 }],
+};
+
+/** Fakes the YouTube API routes so the test needs neither yt-dlp nor YouTube. */
+async function fakeYoutube(page: Page, info: object = ytVideo, status = 200) {
+  const streams: string[] = [];
+  await page.route("**/api/youtube/info?*", (route) =>
+    route.fulfill({ status, contentType: "application/json", body: JSON.stringify(info) }),
+  );
+  await page.route("**/api/youtube/stream?*", (route) => {
+    const url = new URL(route.request().url());
+    streams.push(`${url.searchParams.get("v")}/${url.searchParams.get("f")}`);
+    return route.fulfill({ body: wav(), contentType: "application/octet-stream" });
+  });
+  return streams;
+}
+
+test("downloads a YouTube video as MP3 through the server relay", async ({ page }) => {
+  await serveCore(page);
+  const streams = await fakeYoutube(page);
+  await page.goto("/en/tools/media-converter");
+  await page.getByRole("radio", { name: "YouTube" }).click();
+  await page.getByLabel("YouTube video link").fill("https://youtu.be/dQw4w9WgXcQ?si=share");
+  await page.getByRole("button", { name: "Find video" }).click();
+  await expect(page.getByTestId("media-info")).toContainText("Test tone");
+  await expect(page.getByTestId("media-info")).toContainText("OpenTools");
+  await page.getByRole("button", { name: "Download MP3" }).click();
+  const result = page.getByTestId("media-result");
+  await expect(result).toBeVisible({ timeout: 90_000 });
+  await expect(result.getByRole("link", { name: /Download Test tone\.mp3/ })).toBeVisible();
+  expect(streams).toEqual(["dQw4w9WgXcQ/140"]);
+});
+
+test("explains YouTube problems: bad links, blocked server, missing video", async ({ page }) => {
+  await fakeYoutube(page, { error: "blocked" }, 503);
+  await page.goto("/pt-BR/tools/media-converter");
+  await page.getByRole("radio", { name: "YouTube" }).click();
+  await page.getByRole("button", { name: "Baixar MP3" }).click();
+  await expect(page.getByRole("alert").filter({ hasText: "Busque um vídeo primeiro." })).toBeVisible();
+  await page.getByLabel("Link do vídeo do YouTube").fill("https://vimeo.com/123");
+  await page.getByRole("button", { name: "Buscar vídeo" }).click();
+  await expect(page.getByRole("alert").filter({ hasText: "não é um link válido de vídeo do YouTube" })).toBeVisible();
+  await page.getByLabel("Link do vídeo do YouTube").fill("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+  await page.getByRole("button", { name: "Buscar vídeo" }).click();
+  await expect(page.getByRole("alert").filter({ hasText: "bloqueando nosso servidor" })).toBeVisible();
 });

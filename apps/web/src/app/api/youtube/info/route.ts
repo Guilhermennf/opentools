@@ -27,7 +27,10 @@ export async function GET(request: NextRequest) {
     let code: YoutubeErrorCode = "failed";
     if (error instanceof YoutubeError) code = error.code;
     else if (error instanceof YtDlpError) code = error.engine ? "engine" : classifyYtDlpError(error.stderr);
-    if (code === "failed" || code === "engine") console.error("[youtube/info]", id, error);
+    // "blocked" is logged too: it is how expired YOUTUBE_COOKIES show up.
+    if (code === "failed" || code === "engine" || code === "blocked") {
+      console.error("[youtube/info]", code, id, error instanceof YtDlpError ? error.stderr.slice(-2000) : error);
+    }
     return youtubeErrorResponse(code);
   }
 }

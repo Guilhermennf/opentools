@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
   if (first.done) {
     const { code, stderr } = await proc.done;
     const kind = classifyYtDlpError(stderr);
-    if (kind === "failed") console.error("[youtube/stream]", id, formatId, code, stderr.slice(-2000));
+    if (kind === "failed" || kind === "blocked") console.error("[youtube/stream]", kind, id, formatId, code, stderr.slice(-2000));
     return youtubeErrorResponse(kind);
   }
 

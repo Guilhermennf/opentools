@@ -2,13 +2,15 @@
 
 import * as React from "react";
 import { useLocale, useTranslations } from "next-intl";
-import type { ToolDefinition } from "@opentools/core";
+import { toolCategories, type ToolDefinition } from "@opentools/core";
 import { normalizeSearch, type Locale } from "@opentools/shared";
+import { Link } from "@/i18n/navigation";
 import { ToolCard } from "./tool-card";
 
 /** Client-side search over serializable tool data (mirrors Registry.search). */
 export function ToolSearch({ tools }: { tools: ToolDefinition[] }) {
   const t = useTranslations("toolsPage");
+  const categoryNames = useTranslations("categories");
   const locale = useLocale() as Locale;
   const [query, setQuery] = React.useState("");
 
@@ -41,10 +43,29 @@ export function ToolSearch({ tools }: { tools: ToolDefinition[] }) {
       {results.length === 0 ? (
         <p className="mt-8">{t("noResults")}</p>
       ) : (
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {results.map((tool) => (
-            <ToolCard key={tool.meta.id} tool={tool} />
-          ))}
+        <div className="mt-8 space-y-12">
+          {toolCategories
+            .filter((c) => results.some((tool) => tool.meta.category === c))
+            .map((c) => {
+              const inCategory = results.filter((tool) => tool.meta.category === c);
+              return (
+                <section key={c} aria-labelledby={`cat-${c}`}>
+                  <div className="mb-4 flex items-baseline justify-between gap-4 border-b pb-2">
+                    <h2 id={`cat-${c}`} className="font-serif text-3xl">
+                      <Link href={`/categories/${c}`} className="hover:text-accent">
+                        {categoryNames(c)}
+                      </Link>
+                    </h2>
+                    <span className="label-mono">{t("count", { count: inCategory.length })}</span>
+                  </div>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {inCategory.map((tool) => (
+                      <ToolCard key={tool.meta.id} tool={tool} />
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
         </div>
       )}
     </div>

@@ -95,3 +95,15 @@ test.describe("json formatter", () => {
     await expect(page.getByRole("alert").filter({ hasText: "Paste some JSON first." })).toBeVisible();
   });
 });
+
+test.describe("tools page", () => {
+  test("groups tools by category and hides empty categories while searching", async ({ page }) => {
+    await page.goto("/en/tools");
+    await expect(page.getByRole("heading", { level: 2, name: "Developer" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "Media" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "Developer" }).getByRole("link")).toHaveAttribute("href", "/en/categories/developer");
+    await page.getByLabel("Search tools").fill("mp3");
+    await expect(page.getByRole("heading", { level: 2, name: "Media" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "Developer" })).toHaveCount(0);
+  });
+});

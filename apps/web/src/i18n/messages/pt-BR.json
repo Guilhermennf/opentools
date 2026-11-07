@@ -43,7 +43,8 @@
       "openText": "O código-fonte é público e qualquer pessoa pode contribuir.",
       "bilingual": "Bilíngue",
       "bilingualText": "Português (Brasil) e inglês, com a mesma qualidade."
-    }
+    },
+    "asciiLabel": "Duas engrenagens encaixadas iluminadas pela esquerda, representando uma caixa de ferramentas"
   },
   "toolsPage": {
     "title": "Ferramentas",

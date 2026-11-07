@@ -12,7 +12,8 @@
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "test:e2e": "turbo run test:e2e",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "ascii": "node scripts/ascii/generate.mjs"
   },
   "devDependencies": {
     "prettier": "^3.9.10",

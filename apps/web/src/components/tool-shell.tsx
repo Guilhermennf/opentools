@@ -47,7 +47,7 @@ export async function ToolShell({ tool, locale, related }: ToolShellProps) {
             <Badge className="mt-4">{t("common.comingSoon")}</Badge>
           ) : null}
         </div>
-        <AsciiArt art={tool.ascii} label={tool.asciiLabel[locale]} className="max-w-xs md:ml-auto" />
+        <AsciiArt art={tool.ascii} label={tool.asciiLabel[locale]} className="mx-auto w-full max-w-md md:ml-auto" />
       </header>
 
       <div className="mt-12">

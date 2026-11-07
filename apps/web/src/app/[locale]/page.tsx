@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { registry } from "@/tools/registry";
 import { ToolCard } from "@/components/tool-card";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { homeAscii } from "@/lib/home-ascii";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
@@ -20,11 +21,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
-  const hero = registry.getBySlug("json-formatter");
 
   return (
     <>
-      <section className="grid items-center gap-10 md:grid-cols-[1.4fr_1fr]">
+      <section className="grid items-center gap-10 md:grid-cols-[1fr_1fr]">
         <div>
           <p className="label-mono mb-4">{t("common.tagline")}</p>
           <h1 className="font-serif text-6xl leading-[0.95] sm:text-7xl">{t("home.title")}</h1>
@@ -34,7 +34,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             <Link href="/tools">{t("home.browseTools")}</Link>
           </Button>
         </div>
-        {hero ? <AsciiArt art={hero.ascii} label={hero.asciiLabel[locale]} animated className="max-w-xs md:ml-auto" /> : null}
+        <AsciiArt art={homeAscii} label={t("home.asciiLabel")} animated className="mx-auto w-full max-w-lg md:ml-auto" />
       </section>
 
       <section className="mt-20">

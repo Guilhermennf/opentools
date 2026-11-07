@@ -19,6 +19,8 @@ Next.js (App Router) · TypeScript · next-intl · Tailwind CSS v4 · pnpm + Tur
 Requires Node 22+ and pnpm 10+.
 
 ```bash
+git clone https://github.com/Guilhermennf/opentools.git
+cd opentools
 pnpm install
 pnpm dev
 ```

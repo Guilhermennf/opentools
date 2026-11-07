@@ -5,5 +5,5 @@ const fallback = vercelHost ? `https://${vercelHost}` : "http://localhost:3000";
 export const siteConfig = {
   name: "OpenTools",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? fallback).replace(/\/$/, ""),
-  repository: "https://github.com/opentools-org/opentools",
+  repository: "https://github.com/Guilhermennf/opentools",
 } as const;

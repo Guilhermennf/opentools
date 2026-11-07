@@ -1,0 +1,14 @@
+{
+  "name": "Media Converter",
+  "tagline": "Convert your own audio and video files to MP4 or MP3.",
+  "description": "Convert media files you own or are authorized to use to MP4 or MP3, locally in your browser. No protected streams, no uploads.",
+  "seo": {
+    "title": "Online Video to MP4 and Audio to MP3 Converter",
+    "description": "Free online media converter. Convert your own video and audio files to MP4 or MP3 locally in your browser, without uploading them."
+  },
+  "content": {
+    "formats": ["Video: MP4", "Audio: MP3"],
+    "technical": "Conversion runs in your browser with FFmpeg compiled to WebAssembly. It only works on files you provide or direct links to publicly accessible files, and it does not bypass platform restrictions.",
+    "privacy": "Files are processed locally and are never stored by OpenTools. Nothing is uploaded unless a feature explicitly says otherwise."
+  }
+}

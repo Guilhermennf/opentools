@@ -1,0 +1,13 @@
+{
+  "name": "JSON Formatter",
+  "tagline": "Format, validate and minify JSON.",
+  "description": "Beautify, validate and minify JSON with clear syntax errors. Runs entirely in your browser.",
+  "seo": {
+    "title": "JSON Formatter, Validator and Minifier Online",
+    "description": "Free online JSON formatter, beautifier, validator and minifier. Clear syntax errors, processed locally in your browser."
+  },
+  "content": {
+    "technical": "Parsing uses the browser's native JSON parser. Valid input is validated before it is formatted or minified.",
+    "privacy": "Your JSON never leaves your browser. Nothing is sent to a server."
+  }
+}

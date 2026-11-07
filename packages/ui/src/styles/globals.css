@@ -1,0 +1,102 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #f6f3ec;
+  --foreground: #141311;
+  --muted: #ece8dd;
+  --muted-foreground: #66625a;
+  --border: #d9d4c7;
+  --accent: #b4361b;
+  --accent-foreground: #fffaf3;
+  --ring: #b4361b;
+  --radius: 0.25rem;
+}
+
+.dark {
+  --background: #0f0f0e;
+  --foreground: #ece8de;
+  --muted: #1a1917;
+  --muted-foreground: #8f8a7f;
+  --border: #2b2a27;
+  --accent: #ff6a3d;
+  --accent-foreground: #140a06;
+  --ring: #ff6a3d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.ascii-figure {
+  container-type: inline-size;
+  width: 100%;
+}
+.ascii-pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  line-height: 1.15;
+  white-space: pre;
+  overflow: hidden;
+  font-size: min(1rem, calc(100cqi / (var(--ascii-cols, 40) * 0.62)));
+}
+.ascii-animated {
+  animation: ascii-pulse 3.2s ease-in-out infinite;
+}
+@keyframes ascii-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ascii-animated {
+    animation: none;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Hash Generator",
+  "tagline": "MD5, SHA-1, SHA-256, SHA-384 and SHA-512 from text or files.",
+  "description": "Generate cryptographic hashes from text or files directly in your browser. Nothing is uploaded.",
+  "seo": {
+    "title": "Online Hash Generator — MD5, SHA-256, SHA-512",
+    "description": "Free online hash generator for text and files. MD5, SHA-1, SHA-256, SHA-384 and SHA-512, computed locally in your browser."
+  },
+  "content": {
+    "formats": ["MD5 (128 bits)", "SHA-1 (160 bits)", "SHA-256 (256 bits)", "SHA-384 (384 bits)", "SHA-512 (512 bits)"],
+    "technical": "SHA-1, SHA-256, SHA-384 and SHA-512 use the browser's Web Crypto API. MD5 and SHA-1 are provided for compatibility and legacy use, not for security-sensitive applications.",
+    "privacy": "Everything runs locally in your browser. Your text and files are never sent to a server."
+  }
+}

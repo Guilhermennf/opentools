@@ -1,0 +1,113 @@
+{
+  "common": {
+    "siteName": "OpenTools",
+    "tagline": "Useful tools. Zero nonsense.",
+    "description": "A free and open collection of useful tools for everyone. Simple, private and without unnecessary complexity.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "clear": "Clear",
+    "loading": "Loading…",
+    "comingSoon": "Coming soon",
+    "beta": "Beta",
+    "openInNewTab": "opens in a new tab"
+  },
+  "nav": {
+    "tools": "Tools",
+    "about": "About",
+    "community": "Community",
+    "home": "OpenTools home",
+    "main": "Main navigation",
+    "github": "Source code on GitHub"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "breadcrumb": "Breadcrumb"
+  },
+  "home": {
+    "title": "Useful tools.",
+    "subtitle": "No unnecessary complexity.",
+    "intro": "Free, open source and private. No accounts, no subscriptions, no limits. Everything runs in your browser whenever possible.",
+    "browseTools": "Browse all tools",
+    "principlesTitle": "Principles",
+    "principles": {
+      "free": "Free forever",
+      "freeText": "Every core tool is free. No premium tiers, no usage limits.",
+      "private": "Private by default",
+      "privateText": "Processing happens in your browser whenever it can.",
+      "open": "Open by design",
+      "openText": "The source code is public and anyone can contribute.",
+      "bilingual": "Bilingual",
+      "bilingualText": "Português (Brasil) and English, with equal quality."
+    }
+  },
+  "toolsPage": {
+    "title": "Tools",
+    "subtitle": "Everything available today.",
+    "searchLabel": "Search tools",
+    "searchPlaceholder": "Search tools…",
+    "noResults": "No tools match your search.",
+    "count": "{count, plural, one {# tool} other {# tools}}"
+  },
+  "categories": {
+    "developer": "Developer",
+    "media": "Media",
+    "file": "File",
+    "text": "Text",
+    "pageSubtitle": "Tools in this category.",
+    "all": "All categories"
+  },
+  "toolShell": {
+    "comingSoonTitle": "This tool is on its way",
+    "comingSoonText": "The interface is not available yet. Follow the repository to be notified when it ships.",
+    "instructions": "How to use",
+    "formats": "Supported formats",
+    "technical": "Technical details",
+    "examples": "Examples",
+    "privacy": "Privacy",
+    "faq": "Frequently asked questions",
+    "related": "Related tools"
+  },
+  "about": {
+    "title": "About",
+    "body1": "OpenTools is an open-source collection of free, accessible and easy-to-use online utilities.",
+    "body2": "It exists to bring useful tools together in one place, without mandatory accounts, subscriptions or artificial limits.",
+    "body3": "Privacy comes first: tools process data locally in your browser whenever technically possible, and uploaded files are never stored."
+  },
+  "community": {
+    "title": "Community",
+    "subtitle": "Suggest tools, report problems and shape the roadmap.",
+    "body": "OpenTools is community driven. The suggestion form is coming soon; until then you can use GitHub Issues.",
+    "repository": "Project repository",
+    "issues": "Open GitHub Issues"
+  },
+  "footer": {
+    "license": "Open source under the MIT license.",
+    "rights": "Free by design. Open by nature. Built for everyone."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or was moved.",
+    "back": "Back to home"
+  },
+  "errors": {
+    "aborted": "The operation was cancelled.",
+    "invalidInput": "The input is not valid.",
+    "unexpected": "Something went wrong. Please try again.",
+    "unsupported": "This is not supported."
+  },
+  "seo": {
+    "homeTitle": "OpenTools — Free online tools. Useful tools. Zero nonsense.",
+    "toolsTitle": "All tools",
+    "toolsDescription": "Browse every free online tool available on OpenTools.",
+    "categoryDescription": "Free online {category} tools on OpenTools.",
+    "aboutTitle": "About",
+    "aboutDescription": "About OpenTools: a free, open-source and privacy-first collection of online tools.",
+    "communityTitle": "Community",
+    "communityDescription": "Suggest new tools, report bugs and contribute to OpenTools."
+  }
+}

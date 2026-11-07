@@ -1,0 +1,14 @@
+node_modules
+.next
+.open-next
+.turbo
+dist
+coverage
+playwright-report
+test-results
+.wrangler
+.dev.vars
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+.claude

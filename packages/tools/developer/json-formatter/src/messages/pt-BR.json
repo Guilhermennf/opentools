@@ -1,0 +1,13 @@
+{
+  "name": "Formatador de JSON",
+  "tagline": "Formate, valide e minifique JSON.",
+  "description": "Embeleze, valide e minifique JSON com erros de sintaxe claros. Roda inteiramente no seu navegador.",
+  "seo": {
+    "title": "Formatador, Validador e Minificador de JSON Online",
+    "description": "Formatador, validador e minificador de JSON online e gratuito. Erros de sintaxe claros, processado localmente no seu navegador."
+  },
+  "content": {
+    "technical": "A análise usa o parser JSON nativo do navegador. A entrada é validada antes de ser formatada ou minificada.",
+    "privacy": "Seu JSON nunca sai do navegador. Nada é enviado a um servidor."
+  }
+}

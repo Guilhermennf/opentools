@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "@opentools/ui/styles.css";
+
+@source "../../../../packages/ui/src";
+@source "../../../../packages/core/src";

@@ -1,0 +1,113 @@
+{
+  "common": {
+    "siteName": "OpenTools",
+    "tagline": "Ferramentas úteis. Zero complicação.",
+    "description": "Uma coleção livre e aberta de ferramentas úteis para todos. Simples, privada e sem complexidade desnecessária.",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "clear": "Limpar",
+    "loading": "Carregando…",
+    "comingSoon": "Em breve",
+    "beta": "Beta",
+    "openInNewTab": "abre em uma nova aba"
+  },
+  "nav": {
+    "tools": "Ferramentas",
+    "about": "Sobre",
+    "community": "Comunidade",
+    "home": "Página inicial do OpenTools",
+    "main": "Navegação principal",
+    "github": "Código-fonte no GitHub"
+  },
+  "a11y": {
+    "skipToContent": "Ir para o conteúdo",
+    "language": "Idioma",
+    "theme": "Tema",
+    "themeLight": "Claro",
+    "themeDark": "Escuro",
+    "themeSystem": "Sistema",
+    "breadcrumb": "Trilha de navegação"
+  },
+  "home": {
+    "title": "Ferramentas úteis.",
+    "subtitle": "Sem complicação desnecessária.",
+    "intro": "Gratuito, de código aberto e privado. Sem contas, sem assinaturas, sem limites. Tudo roda no seu navegador sempre que possível.",
+    "browseTools": "Ver todas as ferramentas",
+    "principlesTitle": "Princípios",
+    "principles": {
+      "free": "Grátis para sempre",
+      "freeText": "Toda ferramenta principal é gratuita. Sem planos premium, sem limites de uso.",
+      "private": "Privado por padrão",
+      "privateText": "O processamento acontece no seu navegador sempre que possível.",
+      "open": "Aberto por design",
+      "openText": "O código-fonte é público e qualquer pessoa pode contribuir.",
+      "bilingual": "Bilíngue",
+      "bilingualText": "Português (Brasil) e inglês, com a mesma qualidade."
+    }
+  },
+  "toolsPage": {
+    "title": "Ferramentas",
+    "subtitle": "Tudo o que está disponível hoje.",
+    "searchLabel": "Buscar ferramentas",
+    "searchPlaceholder": "Buscar ferramentas…",
+    "noResults": "Nenhuma ferramenta corresponde à sua busca.",
+    "count": "{count, plural, one {# ferramenta} other {# ferramentas}}"
+  },
+  "categories": {
+    "developer": "Desenvolvedor",
+    "media": "Mídia",
+    "file": "Arquivos",
+    "text": "Texto",
+    "pageSubtitle": "Ferramentas desta categoria.",
+    "all": "Todas as categorias"
+  },
+  "toolShell": {
+    "comingSoonTitle": "Esta ferramenta está a caminho",
+    "comingSoonText": "A interface ainda não está disponível. Acompanhe o repositório para saber quando for lançada.",
+    "instructions": "Como usar",
+    "formats": "Formatos suportados",
+    "technical": "Detalhes técnicos",
+    "examples": "Exemplos",
+    "privacy": "Privacidade",
+    "faq": "Perguntas frequentes",
+    "related": "Ferramentas relacionadas"
+  },
+  "about": {
+    "title": "Sobre",
+    "body1": "O OpenTools é uma coleção de código aberto de utilitários online gratuitos, acessíveis e fáceis de usar.",
+    "body2": "Ele existe para reunir ferramentas úteis em um só lugar, sem contas obrigatórias, assinaturas ou limites artificiais.",
+    "body3": "A privacidade vem primeiro: as ferramentas processam os dados localmente no seu navegador sempre que tecnicamente possível, e arquivos enviados nunca são armazenados."
+  },
+  "community": {
+    "title": "Comunidade",
+    "subtitle": "Sugira ferramentas, relate problemas e ajude a definir o roadmap.",
+    "body": "O OpenTools é guiado pela comunidade. O formulário de sugestões chega em breve; até lá, use as Issues do GitHub.",
+    "repository": "Repositório do projeto",
+    "issues": "Abrir Issues no GitHub"
+  },
+  "footer": {
+    "license": "Código aberto sob a licença MIT.",
+    "rights": "Grátis por design. Aberto por natureza. Feito para todos."
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "text": "A página que você procura não existe ou foi movida.",
+    "back": "Voltar para o início"
+  },
+  "errors": {
+    "aborted": "A operação foi cancelada.",
+    "invalidInput": "A entrada não é válida.",
+    "unexpected": "Algo deu errado. Tente novamente.",
+    "unsupported": "Isso não é suportado."
+  },
+  "seo": {
+    "homeTitle": "OpenTools — Ferramentas online grátis. Ferramentas úteis. Zero complicação.",
+    "toolsTitle": "Todas as ferramentas",
+    "toolsDescription": "Veja todas as ferramentas online gratuitas disponíveis no OpenTools.",
+    "categoryDescription": "Ferramentas online gratuitas de {category} no OpenTools.",
+    "aboutTitle": "Sobre",
+    "aboutDescription": "Sobre o OpenTools: uma coleção gratuita, de código aberto e focada em privacidade de ferramentas online.",
+    "communityTitle": "Comunidade",
+    "communityDescription": "Sugira novas ferramentas, relate bugs e contribua com o OpenTools."
+  }
+}

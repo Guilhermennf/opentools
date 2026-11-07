@@ -1,0 +1,14 @@
+{
+  "name": "Conversor de Mídia",
+  "tagline": "Converta seus próprios arquivos de áudio e vídeo para MP4 ou MP3.",
+  "description": "Converta arquivos de mídia que você possui ou tem autorização para usar para MP4 ou MP3, localmente no navegador. Sem streams protegidos, sem uploads.",
+  "seo": {
+    "title": "Conversor de Vídeo para MP4 e Áudio para MP3 Online",
+    "description": "Conversor de mídia online e gratuito. Converta seus próprios arquivos de vídeo e áudio para MP4 ou MP3 localmente no navegador, sem enviá-los."
+  },
+  "content": {
+    "formats": ["Vídeo: MP4", "Áudio: MP3"],
+    "technical": "A conversão roda no navegador com FFmpeg compilado para WebAssembly. Funciona apenas com arquivos que você fornece ou links diretos para arquivos publicamente acessíveis, e não contorna restrições de plataformas.",
+    "privacy": "Os arquivos são processados localmente e nunca são armazenados pelo OpenTools. Nada é enviado, a menos que um recurso diga explicitamente o contrário."
+  }
+}

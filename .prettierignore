@@ -1,0 +1,5 @@
+node_modules
+.next
+.open-next
+pnpm-lock.yaml
+my-toolbox-idea.md

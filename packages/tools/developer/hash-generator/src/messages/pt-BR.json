@@ -1,0 +1,14 @@
+{
+  "name": "Gerador de Hash",
+  "tagline": "MD5, SHA-1, SHA-256, SHA-384 e SHA-512 a partir de texto ou arquivos.",
+  "description": "Gere hashes criptográficos de texto ou arquivos direto no navegador. Nada é enviado para servidores.",
+  "seo": {
+    "title": "Gerador de Hash Online — MD5, SHA-256, SHA-512",
+    "description": "Gerador de hash online e gratuito para texto e arquivos. MD5, SHA-1, SHA-256, SHA-384 e SHA-512, calculados localmente no seu navegador."
+  },
+  "content": {
+    "formats": ["MD5 (128 bits)", "SHA-1 (160 bits)", "SHA-256 (256 bits)", "SHA-384 (384 bits)", "SHA-512 (512 bits)"],
+    "technical": "SHA-1, SHA-256, SHA-384 e SHA-512 usam a Web Crypto API do navegador. MD5 e SHA-1 existem por compatibilidade e uso legado, não para aplicações sensíveis à segurança.",
+    "privacy": "Tudo roda localmente no seu navegador. Seu texto e seus arquivos nunca são enviados a um servidor."
+  }
+}
